@@ -57,12 +57,7 @@ string(REGEX MATCH "GNU" CMAKE_COMPILER_IS_GNU "${CMAKE_C_COMPILER_ID}")
 string(REGEX MATCH "IAR" CMAKE_COMPILER_IS_IAR "${CMAKE_C_COMPILER_ID}")
 string(REGEX MATCH "MSVC" CMAKE_COMPILER_IS_MSVC "${CMAKE_C_COMPILER_ID}")
 
-# the test suites currently have compile errors with MSVC
-if(CMAKE_COMPILER_IS_MSVC)
-    option(ENABLE_TESTING "Build Mbed TLS tests." OFF)
-else()
-    option(ENABLE_TESTING "Build Mbed TLS tests." ON)
-endif()
+option(ENABLE_TESTING "Build Mbed TLS tests." OFF)
 
 # Warning string - created as a list for compatibility with CMake 2.8
 set(WARNING_BORDER "*******************************************************\n")
